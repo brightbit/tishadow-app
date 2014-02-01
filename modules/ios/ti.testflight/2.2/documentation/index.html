@@ -1,0 +1,82 @@
+<h1>TestFlight Module</h1>
+
+<h2>Description</h2>
+
+<p>Testflightapp.com SDK integration</p>
+
+<p>Note: TestFlight requires that your device be registered with TestFlight. This means that the module will not work in the iOS simulator.</p>
+
+<h2>Accessing the testflight Module</h2>
+
+<p>To access this module from JavaScript, you would do the following:</p>
+
+<pre><code>var testflight = require("ti.testflight");
+</code></pre>
+
+<p>The testflight variable is a reference to the Module object.    </p>
+
+<h2>Reference</h2>
+
+<h3>testflight.takeOff(appToken[,true])</h3>
+
+<h4>Arguments</h4>
+
+<p>Takes one argument, a string which is the App token that will be used for your builds (the app token is NOT the API token)
+The second argument is a boolean. If added then the DeviceIdentifier is set for
+TestFlight or not. Use this only during tests and not in production environment.</p>
+
+<h3>testflight.addCustomEnvironmentInformation(key, value)</h3>
+
+<h4>Arguments</h4>
+
+<p>Takes two arguments, the first being a string for the key, the second a string for the value.
+These are environment based details, so it won't track changes in the data.
+For example you might use this for a username of the tester within your app.</p>
+
+<h3>testflight.passCheckpoint(checkpointName)</h3>
+
+<h4>Arguments</h4>
+
+<p>Takes one argument, a string which is the name for your checkpoint</p>
+
+<h3>testflight.submitFeedback(feedbackString)</h3>
+
+<h4>Arguments</h4>
+
+<p>Takes one argument, a string you want recorded as feedback. Use this if you want to make a custom feedback form.</p>
+
+<h3>testflight.log(category,string)</h3>
+
+<h4>Arguments</h4>
+
+<p>Adds a logging entry in the LOG.</p>
+
+<h3>testflight.sdkVersion()</h3>
+
+<p>Returns the current TestFlight SDK Version which is used in the module</p>
+
+<h2>Usage</h2>
+
+<pre><code>  var testflight = require('ti.testflight');
+
+  testflight.takeOff('YourAppTokenHere');
+
+  testflight.passCheckpoint('SomeCheckpoint');
+
+  testflight.submitFeedback('Text from your own custom form');
+</code></pre>
+
+<h2>Authors</h2>
+
+<p>Torsten Stelling
+Twitter: dasmurphy</p>
+
+<p>Rick Blalock
+Twitter: rblalock</p>
+
+<p>Matt Apperson
+Twitter: mattapperson</p>
+
+<h2>License</h2>
+
+<p>FreeBSD License</p>
